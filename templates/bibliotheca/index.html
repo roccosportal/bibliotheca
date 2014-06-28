@@ -1,0 +1,99 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>welt*RAUM Bibiliothek für Alle</title>
+        <link href="{% static 'bibliotheca/css/bootstrap.min.css' %}" rel="stylesheet">
+        <link href="{% static 'bibliotheca/css/general.css' %}" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="page-header">
+                        <h1>welt*RAUM Bibiliothek <small>für Alle</small></h1>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                        <input type="search" id="search" class="form-control" placeholder="Suche">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="pull-right">
+                        <a class="extended-search-toggle" href="">erweiterte Suche
+                            <span class="glyphicon glyphicon-chevron-down"></span>
+                        </a>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div id="search-options" class="panel panel-default extended-search" style="display:none">
+                        <div class="panel-body">
+                            <label class="checkbox-inline">
+                              <input type="checkbox" value="BK" checked="checked"> Bücher
+                            </label>
+                            <label class="checkbox-inline">
+                              <input type="checkbox" value="AT" checked="checked"> Audio-Vorträge
+                            </label>
+                            <label class="checkbox-inline">
+                              <input type="checkbox" value="VT" checked="checked"> Video-Vorträge
+                            </label>
+                            <label class="checkbox-inline">
+                              <input type="checkbox" value="PC" checked="checked"> Podcasts
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <p class="text-muted"><small class="result-message"></small></p>
+                    <ul id="medias" class="media-list">
+                    </ul>
+                    <ul id="pagination" class="pagination" style="display:none">
+                      <li><a href="#">&laquo;</a></li>
+                      <li><a href="#">&raquo;</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="templates" style="display:none">
+            <div id="template-media">
+                <ul>
+                    <li class="media">
+                        <a class="pull-left" href="#">
+                        <img class="media-object" data-src="" src="" alt="...">
+                        </a>
+                        <div class="media-body">
+                            <h4 class="media-heading"></h4>
+                            <small></small>
+                            <p></p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div id="template-pagination">
+                <ul>
+                    <li class="page"><a href="#"></a></li>
+                </ul>
+            </div>
+        </div>
+        <script src="http://imsky.github.com/holder/holder.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="{% static  'bibliotheca/js/bootstrap.min.js' %}"></script>
+        <script>
+            var IMG_BK_URL = '{% static 'bibliotheca/img/book.png' %}'
+            var IMG_AT_URL = '{% static 'bibliotheca/img/audiotalk.png' %}'
+            var IMG_VT_URL = '{% static 'bibliotheca/img/videotalk.png' %}'
+            var IMG_PC_URL = '{% static 'bibliotheca/img/podcast.png' %}'
+        </script>
+        <script src="{% static  'bibliotheca/js/bibliotheca.js' %}"></script>
+        <script>
+           $(document).ready(function(){bibliotheca.init()})
+        </script>
+    </body>
+</html>
