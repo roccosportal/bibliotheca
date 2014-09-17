@@ -86,6 +86,10 @@ available via pip
 settings.py
 
 ```python
+# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+import os
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+
 AWS_CONFIG = {
     'access_key': 'access_key',
     'secret_key': 'secret_key',
@@ -99,9 +103,12 @@ ELASTICSEARCH = {
     'index' : 'bibliotheca'
 }
 
+
+# add bibliotheca to the installed apps
 INSTALLED_APPS = (
     'bibliotheca',
 )
+
 
 TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
 ```
