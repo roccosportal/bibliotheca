@@ -123,3 +123,36 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls))
 )
 ```
+
+## django-admin
+
+To add a button to the django admin page copy from the source files django/contrib/admin/templates/admin/index.html to {MODUL}/templates/admin/index.html
+
+Find the django source files: `python -c "
+import sys
+sys.path = sys.path[1:]
+import django
+print(django.__path__)"`
+
+
+Edit the content of the sidebar block. Add the `#custom-action.module` after `#recent-actions-module.module`
+
+```html
+...
+
+{% block sidebar %}
+<div id="content-related">
+    <div class="module" id="recent-actions-module">
+        ...
+    </div>
+     <div class="module" id="custom-action">
+        <h2>{% trans 'Custom Actions' %}</h2>
+        <ul class="actionlist">
+        <li class="">
+                <a href="{% url 'isbnsearch' %}">Add Book by ISBN</a>
+        </li>
+        </ul>
+    </div>
+</div>
+{% endblock %}
+```
