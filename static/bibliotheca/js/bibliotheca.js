@@ -20,9 +20,11 @@ bibliotheca.media_types = {
             case 'AT':
                 return 'glyphicon-headphones'
             case 'VT':
-                return 'glyphicon-facetime-video'
+                return 'glyphicon-play-circle'
             case 'PC':
                 return 'glyphicon-bullhorn'
+            case 'MV':
+                return 'glyphicon-facetime-video'
         }
         return ''
     },
@@ -36,6 +38,8 @@ bibliotheca.media_types = {
                 return IMG_VT_URL
             case 'PC':
                 return IMG_PC_URL
+            case 'MV':
+                return IMG_MV_URL
         }
         return ''
     }

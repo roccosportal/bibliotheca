@@ -20,11 +20,13 @@ class Media(models.Model):
     AUDIOTALK = 'AT'
     VIDEOTALK = 'VT'
     PODCAST = 'PC'
+    MOVIE = 'MV'
     MEDIA_TYPES = (
         (BOOK, 'Book'),
         (AUDIOTALK, 'Audiotalk'),
         (VIDEOTALK, 'Videotalk'),
         (PODCAST, 'Podcast'),
+        (MOVIE, 'Movie'),
     )
     media_type = models.CharField(max_length=2,
                                       choices=MEDIA_TYPES,
