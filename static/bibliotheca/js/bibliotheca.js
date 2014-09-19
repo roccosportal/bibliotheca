@@ -117,6 +117,7 @@ bibliotheca.media = {
         $media_html.find('.media-body small').html(media_subheader)
 
         media_description = media.description
+        media_description = media_description.replace(/\r\n/g, '<br />')
         if(media_description.length > bibliotheca.MAX_TEXT_LENGTH){
             beginning = media_description.slice(0, bibliotheca.MAX_TEXT_LENGTH)
             ending = media_description.slice(bibliotheca.MAX_TEXT_LENGTH)
