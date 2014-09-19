@@ -15,6 +15,7 @@ class Media(models.Model):
     description = models.TextField()
     imageurl = models.TextField(blank=True)
     contenturl = models.TextField(blank=True)
+    tags = models.CharField(max_length=200,blank=True)
 
     BOOK = 'BK'
     AUDIOTALK = 'AT'
@@ -80,7 +81,9 @@ def update_media_in_elasticsearch(media):
         'imageurl' : media.imageurl,
         'contenturl' : media.contenturl,
         'media_type' : media.media_type,
+        'tags' : media.tags,
         'authors' : media.get_authors_as_string(),
+
     }
     res = es.index(index=settings.ELASTICSEARCH['index'], doc_type='media', id=media.pk, body=doc)
     es.indices.refresh(index=settings.ELASTICSEARCH['index'])

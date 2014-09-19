@@ -45,7 +45,8 @@ def isbnsearch_view(request):
                 'author' : item.ItemAttributes.Author,
                 'description' : description,
                 'imageurl' : item.MediumImage.URL,
-                'contenturl' : 'http://asin.info/a/' + item.ASIN
+                'contenturl' : 'http://asin.info/a/' + item.ASIN,
+                'tags' : ''
             }
 
             # urlencode expects data in str format and doesn't deal well with unicode data
@@ -91,6 +92,7 @@ def addbookfromamazon_view(request):
                 description=request.POST['description'],
                 imageurl=request.POST['imageurl'],
                 contenturl=request.POST['contenturl'],
+                tags=request.POST['tags']
             )
 
         media.save()
@@ -110,6 +112,7 @@ def addbookfromamazon_view(request):
         'author' : request.GET['author'],
         'description' : request.GET['description'],
         'imageurl' : request.GET['imageurl'],
-        'contenturl' : request.GET['contenturl']
+        'contenturl' : request.GET['contenturl'],
+        'tags' : request.GET['tags']
     }, current_app = admin.site.name)
     return HttpResponse(template.render(context))

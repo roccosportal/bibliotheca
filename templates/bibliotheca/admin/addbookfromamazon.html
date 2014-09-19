@@ -34,13 +34,20 @@
                         <img src="{{ imageurl }}" />
                     </div>
             </div>
-             <div class="form-row">
+            <div class="form-row">
                     <div>
                        <label for="id_contenturl">Content Url:</label>
                         <input id="id_contenturl" class="vTextField" name="contenturl" type="text" value="{{ contenturl }}">
 
                     </div>
             </div>
+            <div class="form-row">
+                   <div>
+                      <label for="id_tags">Tags:</label>
+                       <input id="id_tags" class="vTextField" name="tags" type="text" value="{{ tags }}">
+
+                   </div>
+           </div>
         </fieldset>
         <input type="submit" name='save' value="Save" />
     </form>

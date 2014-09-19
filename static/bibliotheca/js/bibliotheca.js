@@ -113,7 +113,13 @@ bibliotheca.media = {
         $media_html = $('#template-media .media').clone()
         $media_html.find('.media-body .media-heading').html(media.title)
 
-        media_subheader = media.authors + ' <span class="glyphicon ' + bibliotheca.media_types.to_glyphicon(media.media_type) +'"></span>'
+        media_tags = media.tags.split(',')
+        media_tags_string =  media_tags.join(' #')
+        if(media_tags_string != ''){
+            media_tags_string = '#' + media_tags_string
+        }
+
+        media_subheader = media.authors + ' ' + media_tags_string + ' <span class="glyphicon ' + bibliotheca.media_types.to_glyphicon(media.media_type) +'"></span>'
         $media_html.find('.media-body small').html(media_subheader)
 
         media_description = media.description

@@ -74,6 +74,16 @@ available via pip
                             "analyzer" : "compoundngram"
                         }
                     }
+                },
+                "tags" : {
+                    "type" : "string",
+                    "analyzer" : "german",
+                    "fields" : {
+                        "compoundngram" : {
+                            "type" : "string",
+                            "analyzer" : "compoundngram"
+                        }
+                    }
                 }
             }
         }

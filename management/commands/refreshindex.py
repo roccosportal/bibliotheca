@@ -21,6 +21,7 @@ class Command(BaseCommand):
                 'imageurl' : media.imageurl,
                 'contenturl' : media.contenturl,
                 'media_type' : media.media_type,
+                'tags' : media.tags,
                 'authors' : media.get_authors_as_string(),
             }
             res = es.index(index=settings.ELASTICSEARCH['index'], doc_type='media', id=media.pk, body=doc)

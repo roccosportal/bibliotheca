@@ -90,7 +90,7 @@ def api_find(request, page):
                             #"fuzziness" :     1,
                             #"type": "cross_fields",
                             #"type": "phrase",
-                            "fields" : ["authors^2", "title^4", "description^2", "description.compoundngram", "title.compoundngram"],
+                            "fields" : ["authors^2", "title^4", "tags^4", "description^2", "description.compoundngram", "title.compoundngram", "tags.compoundngram"],
                             "tie_breaker" : 0.3,
                             #"minimum_should_match": "80%",
                             #"operator":   "or"
