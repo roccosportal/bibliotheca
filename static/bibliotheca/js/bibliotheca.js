@@ -215,6 +215,7 @@ bibliotheca.pagination = {
         $page.click(function(e){
             e.preventDefault()
             bibliotheca.media_query.rerun_with_different_page(page)
+            $("html, body").animate({ scrollTop: 0 }, "slow");
         })
 
         // append the $page before the last li (which is the 'next' pointer)
