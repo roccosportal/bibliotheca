@@ -12,7 +12,7 @@ def api_get_all(request, page):
     page = int(page)
 
     es = Elasticsearch()
-    allowed_media_types = [Media.BOOK, Media.AUDIOTALK, Media.VIDEOTALK, Media.PODCAST, Media.MOVIE]
+    allowed_media_types = [Media.BOOK, Media.AUDIOTALK, Media.VIDEOTALK, Media.PODCAST, Media.MOVIE, Media.MAGAZINE]
     if 'media_types' in request.GET:
         # split string "BK,AT," into array at "," and remove empty itemes
         allowed_media_types = filter(None,request.GET['media_types'].split(','))
@@ -50,7 +50,7 @@ def api_find(request, page):
     else:
         q = request.GET['q']
 
-        allowed_media_types = [Media.BOOK, Media.AUDIOTALK, Media.VIDEOTALK, Media.MOVIE]
+        allowed_media_types = [Media.BOOK, Media.AUDIOTALK, Media.VIDEOTALK, Media.MOVIE, Media.MAGAZINE]
         if 'media_types' in request.GET:
             # split string "BK,AT," into array at "," and remove empty itemes
             allowed_media_types = filter(None,request.GET['media_types'].split(','))

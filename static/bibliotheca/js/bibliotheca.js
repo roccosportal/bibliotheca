@@ -25,6 +25,8 @@ bibliotheca.media_types = {
                 return 'glyphicon-bullhorn'
             case 'MV':
                 return 'glyphicon-facetime-video'
+            case 'MG':
+                return 'glyphicon-list-alt'
         }
         return ''
     },
@@ -40,6 +42,8 @@ bibliotheca.media_types = {
                 return IMG_PC_URL
             case 'MV':
                 return IMG_MV_URL
+            case 'MG':
+                return IMG_MG_URL
         }
         return ''
     }
